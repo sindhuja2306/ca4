@@ -43,29 +43,6 @@ app.get('/:id',async(req,res)=>{
     }
 })
 
-app.put('/:id',async(req,res)=>{
-    try{
-        const updateBooks= await Books.findByIdAndUpdate(req.params.id,req.body,{new:true});
-        if(!updateBooks){
-            return res.status(404).json({message:"updatebook is cannot found"})
-        }
-        res.json(updateBooks);
-    }catch(err){
-        res.status(500).json({error:err.message});
-    }
-})
-
-app.delete('/:id',async(req,res)=>{
-    try{
-        const deleteBooks= await Books.findByIdAndDelete(req.params.id);
-        if(!deleteBooks){
-            return res.status(404).json({message:"deletebook is cannot found"});
-        }
-        res.json(deleteBooks);
-    }catch(err){
-        res.status(500).json({error:err.message});
-    }
-})
 
 app.listen(PORT,()=>{
     console.log(`server is running at http://localhost:${PORT}`);
