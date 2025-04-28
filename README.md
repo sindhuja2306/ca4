@@ -6,4 +6,4 @@
 
 # 4.inplemented POST and GET
 
-
+# finally the api is working and i have submitted the screen shots also
